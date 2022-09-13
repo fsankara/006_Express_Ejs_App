@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080">Ana Sayfa</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <center><h1>Dersler 2 Sayfası</h1></center>
+    <div>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <% for(var i=0; i<data1.length; i++) {%>
+                        <th>
+                            <%= data1[i].gun.toUpperCase() %>
+                        </th>
+                        <% } %>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr>
+                    <% for(var i=0; i<7; i++) {%>
+                <tr>
+                    <% for(var j=0; j<5; j++) {%>
+                        <th>
+                            <%= data1[j].ders[i] %>
+                        </th>
+                        <% } %>
+                    <% } %>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

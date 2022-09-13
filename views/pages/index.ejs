@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %> <!-- <%- include('../partials/header', {variant: 'compact'}); %> -->
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Haftalık Ders Programı</h1>
+            <p>5. Sınıf -  Ortaokul</p>
+            <!-- <p>
+                <%= tagline %>
+            </p> -->
+        </div>
+        <div>
+            <table class="table table-dark table-hover">
+                <thead class="table-group-divider">
+                    <tr>
+                        <% for(var i=0; i<data1.length; i++) {%>
+                            <th>
+                                <%= data1[i].gun.toUpperCase() %>
+                            </th>
+                            <% } %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <% for(var i=0; i<7; i++) {%>
+                    <tr>
+                        <% for(var j=0; j<5; j++) {%>
+                            <th>
+                                <%= data1[j].ders[i] %>
+                            </th>
+                            <% } %>
+                                <% } %>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>
